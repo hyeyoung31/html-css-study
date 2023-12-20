@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR 기법</title>
+    <style>
+      /* IR기법 */
+      h1 a {
+        background: url('img/logo.png')no-repeat;
+        width:87px;
+        height:87px;
+        border:1px solid red;
+        text-indent:87px;
+        white-space: nowrap;
+        overflow:hidden;
+        display:block;
+      } 
+      /* h1에다가 하면 a를 버린게 되서 링크 활성화가 안됨 */
+   
+      /* 스프라이트 기법 */
+      ul li{
+        list-style: none;
+        display:inline-block;
+      }
+      ul li a{
+        background: url(img/sprite_icons.png) no-repeat;
+        width:42px;
+        height:42px;
+        display:block;
+        text-indent:-9999em;
+      }
+      ul li:nth-child(2) a{
+        background-position: -53px 0;
+      }
+      /* background-position-x: -53px;
+         background-position-y: 0;
+         와 같음
+      */
+      ul li:nth-child(3) a{
+        background-position: -105px 0;
+      }
+      ul li:nth-child(4) a{
+        background-position: 100% 0;
+      }
+
+      /* 네이버 로고방식 */
+      /* ul li:nth-child(1) a:hover{
+        background-position: 0 -52px;
+      }
+      ul li:nth-child(2) a:hover{
+        background-position: -53px -52px;
+      }
+      ul li:nth-child(3) a:hover{
+        background-position:-105px -52px;
+      }
+      ul li:nth-child(4) a:hover{
+        background-position: 100% -52px;
+      }
+       */
+       ul li a:hover {background-position-y: -52px;}
+      
+   </style>
+</head>
+
+<body>
+    <h1><a href="index.html">Sharp Logo</a></h1>
+    <h2>IR기법</h2>
+    <pre>·image replacement
+    ·웹 접근성, 웹 표준 및 검색 엔진 최적화를 위해 텍스트를 작성
+    ·디자인적으로 텍스트 대신에 이미지가 나타나도록 하는 기법
+    ·이미지 로딩 속도 개선을 위한 기법
+    </pre>
+       
+
+
+    <h2>스프라이트 이미지</h2>
+    <pre>·로딩 속도를 위해 여러 개의 파일보다 하나의 파일로 이미지 제작
+    ·Background 속성을 활용
+    ·sprite_icons.png
+    </pre>
+    <hr>
+    <ul>
+        <li><a href="">Add Member</a></li>
+        <li><a href="">Mail to Member</a></li>
+        <li><a href="">Member information</a></li>
+        <li><a href="">Delete Memeber</a></li>
+    </ul>
+        
+</body>
+
+</html>
