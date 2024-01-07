@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Aside Navigation</title>
+	<style>
+		label {
+			position: fixed;
+			left: 10px;
+			top: 10px;
+			background: #fff;
+			border: 2px solid;
+			padding: 5px 10px;
+			z-index: 100;
+		}
+
+		aside {
+			width: 250px;
+			background: #333;
+			padding-top: 50px;
+			padding-left: 100px;
+			position: fixed;
+			left: -350px;
+			top: 0;
+			bottom: 0;
+			transition: 0.4s cubic-bezier(0.36, 0, 0.66, -0.56);
+
+		}
+
+		aside * {
+			color: #fff;
+		}
+
+		main p {
+			line-height: 2em;
+			margin: 2em 0;
+		}
+
+		#toggle:checked+label {
+			background: #000;
+			color: #fff;
+		}
+
+		#toggle:checked~aside {
+			left: -50px;
+			transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<input type="checkbox" id="toggle">
+	<label for="toggle">Menu</label>
+	<aside>
+		<h2>About Us</h2>
+		<ul>
+			<li><a href="">CEO greeting</a></li>
+			<li><a href="">Vision</a></li>
+			<li><a href="">History</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</aside>
+	<main>
+		<h2>Content title</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi magnam, sunt saepe exercitationem cumque
+			quidem dolorum libero excepturi corporis totam deleniti nisi nostrum non tempora temporibus aliquam.
+			Voluptates, numquam officia!</p>
+	</main>
+	<!-- partial -->
+
+</body>
+
+</html>
