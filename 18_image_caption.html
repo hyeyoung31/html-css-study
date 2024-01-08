@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Transition활용</title>
+
+  <style>
+  p{margin:0;}
+   figure{
+    margin:0;
+    position:relative;
+   }
+   
+   li{
+    list-style: none;
+    width:400px;
+    height:200px;
+   }
+
+  /* 이미지 사이즈와 딱맞게 image-caption씌우기 */
+   /* li figcaption{
+    color:#fff;
+    text-align: center;
+    line-height:200px;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.7);
+    opacity:0;
+    transition:0.4s;
+   }
+   
+   li:hover figcaption{
+    opacity:1;
+   } */
+
+   /* image-caption이 밖에서 들어오는 효과 */
+
+   li{overflow:hidden;}
+
+   li figcaption{
+    color:#fff;
+    text-align: center;
+    line-height:200px;
+    position:absolute;
+    left:-100%;
+    top:0;
+    right:100%;
+    bottom:0;
+    background:rgba(0,0,0,0.7);
+    transition:0.4s ease-out;
+   }
+   
+   li:hover figcaption{
+    left:0;
+    right:0;
+   }
+  </style>
+
+</head>
+
+<body>
+<h1>Image caption</h1>
+<h3>①구현 목표</h3>
+<p>·이미지에 마우스를 호버 시 이미지의 캡션이 나타난다</p>
+<h3>②주요 선택자 및 속성</h3>
+<p>·transition-property, transition-duration, easing-function</p>
+<h3>③주의점</h3>
+<p>·display:none display:block은 숫자가 아님으로 전환효과가 적용x 숫자인 opacity활용
+  <br> ·caption 안보이다 보이게 하려면
+   left:-100%; right:100% => left:0; right:0; & li{overflow:hidden;}
+</p>
+  
+<ul>
+    <li>
+      <figure>
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>image caption</figcaption>
+      </figure>
+    </li>
+    <li>
+      <figure>
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>image caption</figcaption>
+      </figure>
+    </li>
+  </ul>
+
+
+</body>
+
+</html>
