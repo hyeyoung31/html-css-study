@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Toggle Switch</title>
+	<style>
+		label {
+			cursor: pointer;
+			text-indent: -9999px;
+			width: 100px;
+			height: 50px;
+			background-color: #DFF7FA;
+			border-radius: 25px;
+			display: block;
+			/* label은 인라인요소 */
+			position: relative;
+			transition: 0.5s;
+		}
+
+		label:after {
+			content: '';
+			position: absolute;
+			left: 4px;
+			top: 4px;
+			width: 42px;
+			height: 42px;
+			border-radius: 50%;
+			background: #a5cace;
+			transition: 0.4s;
+		}
+
+		#toggle-slider:checked+label {
+			background: #96e7ef;
+		}
+
+		#toggle-slider:checked+label:after {
+			left: 53px;
+			background: #1d6269;
+		}
+
+		#toggle-slider {
+			display: none;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>Toggle Switch</h1>
+	<h3>①구현 목표</h3>
+	<p>·버튼을 클릭하면 토글 스위치를 이동시킨다.</p>
+	<h3>②주요 선택자 및 속성</h3>
+	·:checked,형제 선택자
+	·transition,position
+
+	<p class="toggle">
+		<input type="checkbox" id="toggle-slider" />
+		<label for="toggle-slider">On/Off</label>
+	</p>
+</body>
+
+</html>
