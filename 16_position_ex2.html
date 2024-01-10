@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position exercise2</title>
+    <style>
+        .answer{
+            background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/positon_btn_final.png) no-repeat;
+            width:363px; height:197px;         
+            margin-bottom:50px;
+        }        
+        .lastest-news{
+            width:300px; 
+            padding:20px;
+            border:2px solid #ccc;
+            margin-top:50px;  
+            position:relative;         
+        }
+       
+    
+
+        a{background-color:#000;
+          color:#fff;
+          padding:5px 10px;
+          /* line-height:30px; */
+          /* display: linline-block; */
+          text-decoration: none;
+          position:absolute;
+          bottom: calc(100% + 5px);
+          right:0}
+    </style>
+</head>
+
+<body>
+    <div class="answer"></div>
+    <div class="lastest-news">
+        
+        <ul>
+          <li>리스트 1</li>
+          <li>리스트 2</li>
+          <li>리스트 3</li>
+          <li>리스트 4</li>
+          <li>리스트 5</li>
+        </ul>
+        <!-- 선형적 구조 리스트를 본다음에 더보기! 뒤에 있어야함 -->
+        <a href="#" class="read-more">Read more</a>
+      </div>
+
+</body>
+
+</html>
