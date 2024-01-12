@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+</head>
+
+<body>
+    <Section>
+        <h2>자손 선택자 - Descendant Selector.</h2>
+        <p>자손 선택자는 문서 구조에서 앞서 선택한 선택자의 자손을 선택합니다.</p>
+        <h4>문법</h4>
+        <pre>
+        문법: A B {속성: 값;}
+    </pre>
+    </Section>
+
+    <Section>
+        <h2>자식 선택자 - Child Selector</h2>
+        <h4>문법</h4>
+        <pre>
+        A > B {속성: 값;}
+    </pre>
+    </Section>
+
+    <Section>
+        <h2>인접 형제 선택자 - Adjacent sibilings Selector</h2>
+        <p>앞선택자의 형제요소 중 앞 선택자 바로 다음에 따라오는 요소를 선택.</p>
+        <h4>문법</h4>
+        <pre>
+        A + B {속성:값;}
+    </pre>
+    </Section>
+
+    <Section>
+        <h2>일반 형제 선택자 - General siblings Selector</h2>
+        <p>앞 선택자 뒤에 따라오는 형제 요소들 모두를 선택</p>
+        <h4>문법</h4>
+        <pre>
+        A ~ B {속성:값;}
+    </pre>
+    </Section>
+
+
+
+    <Section>
+        <h2>속성 선택자 - Attribute Selector</h2>
+        <p>속성 선택자는 HTML 태그의 속성들을 통해 원하는 요소를 선택할 때 사용한다</p>
+        <h4>문법</h4>
+        <pre>
+         [속성명] {속성:값;}
+         [속성명= "값"] {속성:값;}
+         [속성명^="값"] {속성:값;}
+    </pre>
+    </Section>
+
+    <Section>
+        <h2>의사 클래스 선택자- Pseudo-class Selector</h2>
+        <pre>
+        :hover    요소에 마우스를 올렸을 때
+        :link     a 태그 모두 선택
+        :visited  이미 방문한 링크 선택
+        :active   a,input,button 등의 요소를 누르는 순간
+        :focus    탭 키를 통해 a, input, button 등의 요소에 포커스가 적용되었을 때
+        :focus-within  자식요소 중 포커스가 적용되었을 때
+        </pre>
+    </Section>
+
+    <Section>
+        <h2>의사 요소 선택자- Pseudo-element Selector</h2>
+        <p>의사 요소 선택자는 가상으로 만들어진 요소를 선택하는 것이다.</p>
+        <pre>
+         ::before, ::after
+        </pre>
+    </Section>
+
+
+    <Section>
+        <h2>일반 구조 선택자 -Pseudo-class Selector </h2>
+        <p>일반 구조 선택자는 형제 요소에서 인덱스번호를 이용하여 요소를 선택한다</p>
+        <pre>
+         :first-child   선택자 중 첫 번째 요소를 선택
+         :last-child    선택자 중 마지막 요소를 선택
+         :nth-child(수열)  선택자 중 수열 번째의 요소를 선택
+         :nth-last-child(수열)  선택자 중 마지막에서 수열 번째의 요소를 선택
+        </pre>
+        <h4>짝수,홀수번째</h4>
+        <pre>
+         :nth-child(2n), :nth-child(even)
+         :nth-child(2n+1), :nth-child(odd)
+        </pre>
+        <h4>이상,이하</h4>
+        :nth-child(n+3) 3번째 이상의 모든 요소를 선택
+        :nth-child(-n+3) 3번째 이하의 모든 요소를 선택
+        :nth-child(n+3):nth-child(-n+6) 3번째 이상 6번째 이하의 요소를 선택
+    </Section>
+
+    <section>
+        <h2>형태 구조 선택자 -Pseudo-class Selector</h2>
+        <p>형태 구조 선택자는 같은 종류들 중 인덱스 번호를 이용하여 요소를 선택한다</p>
+        <pre>
+        :first-of-type: 형제요소에서 같은 종류 중 첫번째 요소
+        :last-of-type : 형제요소에서 같은 종류 중 마지막 요소
+        :nth-of-type(수열) : 형제요소에서 같은 종류 중 수열 번째 요소
+        </pre>
+        <h4>nth-child와 비교</h4>
+        <pre>
+        h2:first-child : 첫 번째 자식요소 중 h2태그를 찾음
+        h2:first-of-type : h2 태그 중 첫번 째 요소
+        </pre>
+    </section>
+
+    <section>
+        <h2>상태 선택자 -Pseudo-class Selector</h2>
+        <p>상태 선택자는 주로 input, button 태그에 많이 사용한다</p>
+        <pre>
+        input:disabled 사용불가 상태인 input 요소를 선택
+        input:checked  체크된 input 요소를 선택
+        :traget        클릭된 링크의 타켓을 받은 요소를 선택
+        </pre>
+        <h4>nth-child와 비교</h4>
+        <pre>
+        h2:first-child : 첫 번째 자식요소 중 h2태그를 찾음
+        h2:first-of-type : h2 태그 중 첫번 째 요소
+        </pre>
+    </section>
+
+    <section>
+        <h2>부정 선택자 -Pseudo-class Selector</h2>
+        <p>:not으로 선택하고 괄호 안에 요소의 반대 요소를 선택한다</p>
+        <pre>
+        :not(선택자)
+        </pre>
+    </section>
+
+</html>
