@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font-face</title>     
+    <style>
+        @font-face {
+            font-family: 'Nanum Gothic';
+            src: url(fonts/NanumGothic.woff) format('woff');
+            /* 트루타입 폰트 지원한다면 */
+            src: url(fonts/NanumGothic.ttf) format('truetype')
+        }
+
+        @font-face{
+            font-family: 'NanumMyeongjo';
+         src: url(fonts/NanumMyeongjo-Regular.ttf) format('truetype')
+        } 
+
+         body{
+             font-family:'Nanum Gothic',sans-serif;
+         } 
+
+    </style> 
+</head>
+<body>   
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut similique autem dicta nesciunt porro tempore, nam
+        perspiciatis ab inventore odit nostrum et facere, earum dolorem. Possimus numquam officiis animi ipsum!
+    </p>
+    <p class="target">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut similique autem dicta nesciunt porro tempore, nam
+        perspiciatis ab inventore odit nostrum et facere, earum dolorem. Possimus numquam officiis animi ipsum!
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>서체</h2>
+    <pre>
+    서체의 타입: sans-serif(고딕체),serif(명조체),cursive(필기체),monospace(동일공간 글꼴)
+</pre>
+    <h4>문법</h4>
+    <pre>
+body {
+font-fanuky: '돋움', dotum, helvetica, sans-serif;
+}
+ 1. 우선 순위가 가장 높은 폰트를 지정한다. 이 때 글꼴명이 두 단어 이상이거나 영어가 아닌 경우
+ 따음표로 감사준다.
+ 2. 영문 윈도우용 폰트를 지정한다.
+ 3. 맥 OS기반의 기본 폰트를 지정한다.
+ 4. 돋움체는 고딕체 계열이므로 서체의 타입을 sans-serif로 지정한다
+</pre>
+    <h2>font-face방식</h2>
+    <pre>
+ -웹 폰트를 서버에 업로드 하고 직접 로드하여 구현
+ -외부 상황에 따라 내 폰트가 나오지 않을 염려는 없다.
+ -내 호스트 용량 크면 트레픽 부담이 있을 수 있음.
+</pre>
+    <h2>CDN방식</h2>
+    <pre>
+ -Contents Delivery Network으로 외부 서버에서 로드
+ -구글 웹 폰트, 어도비 웹폰트
+ -외부에서 가져와 트레픽 부담이없음. 외부 서버 문제시 우리사이트에 안나올 수 있음
+    </pre>
+
+
+    <h2>Script방식</h2>
+    <pre>
+-자바 스크립트 방식으로 폰트를 로드
+-앞에 fontface나 cdn방식보다 빠름
+<a href="https://github.com/typekit/webfontloader">참고 사이트</a>
+</pre>
+</body>
+
+</html>
