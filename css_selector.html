@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>    
+    <style>
+        header .title{
+            background-color: silver;
+        }
+        /* 
+        nav ul li a {
+            background-color: silver; 
+        } 
+        
+        nav ul li > a {
+            background-color: silver; 
+        } 
+        */
+        nav > ul > li > a {
+            background-color: silver; 
+        }
+        /* section ul{
+            background-color: silver;
+        } */
+        section h1 + ul{
+            background-color: silver;
+        }
+        section h2 ~ ul{
+            color:blue;
+        }
+    </style>    
+</head>
+<body>   
+   <pre>1.자손 선택자 - Descendant Selector.
+    자손 선택자는 문서 구조에서 앞서 선택한 선택자의 자손을 선택합니다.
+    문법: A B {속성: 값;}
+    2.자식 선택자 - Child Selector
+    문법: A > B {속성: 값;}
+    3.인접 형제 선택자 - Adjacent sibilings Selector
+    앞선택자의 형제요소 중 앞 선택자 바로 다음에 따라오는 요소를 선택합니다.
+    문법: A + B {속성:값;}
+    4.일반 형제 선택자 - General siblings Selector
+    앞 선택자 뒤에 따라오는 형제 요소들 모두를 선택하는 것
+    문법: A ~ B {속성:값;}
+   </pre>
+   <header>
+       <h1 class="title">Logo</h1>
+       <nav>
+           <ul>
+               <li><a href="">Menu</a>
+                    <ul>
+                        <li><a href="">sub-menu</a></li>
+                        <li><a href="">sub-menu</a></li>
+                    </ul>
+               </li>
+               <li><a href="">Menu</a></li>
+               <li><a href="">Menu</a></li>
+           </ul>
+       </nav>
+   </header>
+   <section>
+       <h1 class="title">Main section</h1>
+       <ul>
+           <li>menu1</li>
+           <li>menu2</li>
+           <li>menu3</li>
+       </ul>
+       <h2>Main title</h2>
+       <ul>
+           <li>menu1</li>
+           <li>menu2</li>
+           <li>menu3</li>
+       </ul>
+       <h3>Sub title</h2>
+       <ul>
+           <li>menu1</li>
+           <li>menu2</li>
+           <li>menu3</li>
+       </ul>
+   </section>
+</body>
+</html>
