@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>background color</h2>
+    <pre>
+    ·배경색을 지정
+    ·색상을 표현하는 모든 방법 가능
+    </pre>
+    <h2>background image</h2>
+    <pre>
+    ·값으로 배경의 경로를 지정
+    ·Background-image:url('경로');
+    ·경로는 상대 경로 또는 절대 경로로 지정
+    </pre>
+    <h2>background-repeat</h2>
+    <pre>
+    ·배경의 반복 속성을 지정
+    ·기본값은 no-repeat으로 가로,세로 모두 반복됨
+    </pre>
+    <h2>background attachment</h2>
+    <pre>
+    ·배경의 고정 속성을 지정
+    ·기본 값은 'scroll'로, 스크롤이 발생하면 스크롤과 함께 이동
+    ·fixed는 스크롤이 발생해도 배경 이미지는 고정
+    </pre>
+    <h2>background position</h2>
+    <pre>·배경의 위치를 설정
+        ·수치를 2개 작성, 첫 번째는 가로 위치, 두 번째는 세로 위치
+        (기본값은 0 0 으로 앞의 수치는 가장 왼쪽, 뒤의 수치는 가장 위쪽)
+        ·background-position:right top;
+        ·background-position:100% 0;
+    </pre>
+    <h2>background size</h2>
+    <pre>
+    100%: 배경이 지정된 요소의 너비를 모두 채움, 세로는 자동확대
+    100% 100% : 이미지의 원래 비율을 무시하고 배경이 지정된 요소의 크기에 맞춰 이미지가 늘어남
+    contain: 배경이 지정된 요소의 세로 높이에 맞춰 배경을 늘림. 가로는 이미지의 원래 비율 유지 하며 자동 조절
+    cover: 배경이 지정된 요소의 가로 너비에 맞춰 배경을 늘리고 세로 이미지는 비율에 맞춰 자동 조절
+    *가로 100%와 cover의 차이는 배경이 지정된 요소의 너비가 비율로 되어 있을 때 확연히 드러난다. 600px로 브라우저 줄였을 때
+    가로 100%는 세로 공간이 남음. cover는 채워진다
+    *cover는 배경보다 요소의 크기가 클 때 가로에 맞춰지고,
+             배경보다 요소의 크기가 작을 때 세로에 맞춰진다.
+             보통 웹사이트 최상단 슬라이드 이미지의 경우
+             .cover {background-size:cover;
+                     bakcground-position: center top;} 식으로 사용
+            (브라우저 너비에 맞춰 전체 모두 사용하되, 브라우저 너비 축소시 세로 높이에 맞춰 변경)
+    </pre>
+    <h2>background stack</h2>
+    <pre>
+    백그라운드 속성을 한번에 지정시 배경위치와 배경 사이즈는 반드시 배경위치가 앞. 슬래시(/)구분해야 함
+    ex) background: url(img/bg.png) 50% 100% / 100% 100% no-repeat fixed #000;
+    </pre>
+</body>
+
+</html>
