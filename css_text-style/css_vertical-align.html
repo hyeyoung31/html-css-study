@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verical-align</title>
+    <style>
+        h2 span {
+            color: #fff;
+            background: #3498db;
+        }
+
+        h2 span:first-child {
+            font-size: 25px;
+        }
+
+        h2 span:last-child {
+            font-size: 12px;
+        }
+
+        .line {
+            border: 1px solid #000;
+        }
+
+        .base{
+            vertical-align: baseline;
+        }
+        .sub{
+            vertical-align: sub;
+        }
+        .super{
+            vertical-align: super;
+        }
+        .top{
+            vertical-align: top;
+        }
+
+        .text-top{
+            vertical-align: text-top;
+        }
+        /* top과1px정도 차이있음 */
+        .middle{
+            vertical-align: middle;
+        }
+        .bottom{
+            vertical-align: bottom;
+        }
+
+        .text-bottom{
+            vertical-align: text-bottom;
+        }
+        /* sub보다 1px위 */
+        .pixel{
+            vertical-align: 10px;
+            /* 베이스라인 기준 위로10px */
+        }
+
+        img{vertical-align: bottom;}
+
+        .base{
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Vertical align</h1>
+    ·글자를 세로 기준으로 정렬
+    ·글자 크기가 다른 인라인 요소가 나열될 때 인라인 요소의 높이를 조정
+    ·기본값은 baseline
+    ·px로 정확한 위치 조정 가능
+    ·이미지 또는 비디오 등 인라인 요소의 아래 여백 제가
+     img{vertical-align:top;}
+    <h2><span>vertical-align</span> <span class="base">baseline</span></h2>
+    <h2><span>vertical-align</span> <span class="sub">sub</span></h2>
+    <h2><span>vertical-align</span> <span class="super">super</span></h2>
+    <h2><span>vertical-align</span> <span class="top">top</span></h2>
+    <h2><span>vertical-align</span> <span class="text-top">text-top</span></h2>
+    <h2><span>vertical-align</span> <span class="middle">middle</span></h2>
+    <h2><span>vertical-align</span> <span class="bottom">bottom</span></h2>
+    <h2><span>vertical-align</span> <span class="text-bottom">text-bottom</span></h2>
+    <h2><span>vertical-align</span> <span class="pixel">pixel</span></h2>
+
+    <p class="line">
+        <img src="http://placehold.it/200x200" alt="">
+    </p>
+</body>
+
+</html>
