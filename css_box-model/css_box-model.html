@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        .box {
+            width: 500px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+        }
+
+        pre {
+            font-size: 0.9rem
+        }
+
+        .padding {
+            padding: 20px;
+        }
+
+        .border {
+            border: 10px solid silver;
+        }
+
+        .margin {
+            margin: 10px;
+        }
+
+        .bg {
+            background: green;
+            color: #fff;
+        }
+
+        .content-box {
+            box-sizing: content-box;
+        }
+
+
+        .content-box {
+            box-sizing: border-box;
+        }
+
+        /* padding border 합쳐서 500이됨 */
+        .border-box {
+            box-sizing: content-box;
+        }
+
+        .box2 {
+            /*border:10px solid green;*/
+            /* border-width:10px 30px 50px px;*/
+            /*border-width:0;
+        border-top-width:10px; */
+
+            border-width: 10px;
+            /* border-style:solid dotted dashed; */
+            /* border-top-style:solid; */
+            border-style: solid;
+            border-color: green silver;
+
+            width: 80%;
+            /* padding:10px 50px 100px 20px;*/
+            /* padding-right:50px; */
+            padding: 20px;
+            /* margin:50px 100px 200px;
+        margin-bottom:50px;
+        margin-top:50px; */
+
+            margin-bottom: 50px;
+            margin: 0 auto;
+            /* margin-right:-100px; */
+            /* display:inline-block; */
+            /* 모든 요소 왼쪽 상단으로 가고자 하는 성향
+        margin-right:-100px 로 오른쪽 100px 여백 없애니 title이 안쪽으로  */
+        }
+
+        /* h3{display: inline-block;} */
+    </style>
+</head>
+
+<body>
+    <h1>Box Model</h1>
+    <pre>
+     ①박스 모델의 개념
+     content를 중심으로 padding, border, margin영역으로 구성
+     ·영역별 설명:
+     content: 실제 내용이 표시되는 영역으로 텍스트와 이미지가 위치
+     padding: content 주변의 여백으로 기본적으로 투명
+     border: padding 바깥 영역의 테두리를 표시
+     *배경은 border 영역까지 나옴
+     magin: border 바깥 영역의 여백을 표시하고 투명
+     ②content-box
+     ·기본값으로서 요소의 너비를 지정했을 때 content 영역의 크기를 지정
+     ·width:500px;
+     
+     ③border-box
+     ·너비를 지정하면 border 영역의 크기를 설정
+     · width:500px;
+     · 500px = content + padding +border
+     · 배경을 넣었다면 border 가 있다면 border까지, padding 이 있다면 padding까지 , content만 있다면 content까지
+    </pre>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>값</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="4">Padding Border Margin</td>
+                <td>10px</td>
+                <td>모든 방향 10px</td>
+            </tr>
+            <tr>
+                <td>10px 20px</td>
+                <td>상하10px, 좌우 20px</td>
+            </tr>
+            <tr>
+                <td>10px 20px 5px</td>
+                <td>상10px, 좌우 20px, 하5px</td>
+            </tr>
+            <tr>
+                <td>10px 20px 5px 1px</td>
+                <td>상10px, 우20px, 하5px, 좌1px</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>content</h2>
+    <div class="box2">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio asperiores aperiam quisquam, inventore
+            est, necessitatibus cupiditate autem ad voluptatum enim facilis quaerat commodi odit suscipit repudiandae
+            quas. Numquam, aperiam velit.</p>
+    </div>
+    <h3>title</h3>
+    <hr>
+    <div class="box content">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <div class="box padding">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <div class="box padding border">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <div class="box padding border margin">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <div class="box padding border margin bg">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <hr>
+    <div class="box padding border margin content-box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+    <div class="box padding border margin border-box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aspernatur reprehenderit blanditiis velit
+            consectetur quibusdam, debitis similique earum cupiditate numquam! Enim, saepe. Aliquid veritatis ex eaque
+            voluptatibus earum. Repellat, non.</p>
+    </div>
+
+
+</body>
+
+</html>
