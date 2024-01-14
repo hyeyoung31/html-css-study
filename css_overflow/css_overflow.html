@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>overflow</title> 
+<style>
+
+     div{
+        width:400px;
+        border:1px solid #ebebeb;
+     }
+     div p{
+        width:450px;
+     }
+
+     .auto{
+        overflow: auto;
+     }
+
+     .hidden{
+        overflow:hidden
+     }
+     .scroll{
+        overflow:scroll;
+     }
+     
+     .xaxis{
+        overflow-x:hidden;
+     }
+
+     /* .yaxis{
+        height:80px;
+        overflow-x:hidden;
+     }
+
+     .yaxis p{
+
+        height:150px;
+     }  */
+
+     .yaxis{
+        overflow:auto;
+        height:80px;
+     }
+
+     .yaxis p{
+      width:auto;
+      height:150px;
+     }   
+</style> 
+</head>
+<body> 
+        <h1>overflow</h1> 
+        <pre>
+            ·요소의 크기가 벗어나는 콘텐츠를 처리하는 방식 설정
+            ·기본값은 auto로 스크롤이 넘치는 방향으로 생성
+            ·hidden, auto, scroll 등으로 설정
+            ·overflow-x, overflow-y등 방향별로 지정 가능
+            ·visible이 기본값값
+        </pre>
+        <div>     
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p>     
+        </div> 
+    
+        <h2>auto</h2> 
+    
+        <div class="auto">     
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p>     
+        </div> 
+    
+        <h2>hidden</h2> 
+    
+        <div class="hidden">     
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p>     
+        </div> 
+    
+        <h2>scroll</h2> 
+    
+        <div class="scroll">     
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p>     
+        </div> 
+    
+        <h2>overflow-x</h2> 
+    
+        <div class="xaxis">     
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p>     
+        </div> 
+    
+        <h2>overflow-y</h2> 
+    
+        <div class="yaxis">    
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptate modi molestiae, recusandae ipsa maiores. Quaerat error explicabo qui libero, commodi a necessitatibus omnis ipsa, amet cumque velit quia laborum?</p> 
+    
+        </div> 
+</body>
+</html>
