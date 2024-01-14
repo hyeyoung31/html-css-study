@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+    /* h1{float:right;} */
+    span{
+        width:300px;
+        background: #ccc;
+        /* float:right; */
+    }
+
+    body > img{
+        float:left;
+    }
+    /* 뒤따라오는 글자요소가 이미지 쪽으로 달려들 때, br에 clear:left   */
+    
+    .clear{clear:left;}
+
+    .images{
+        width:340px;
+        margin:0 auto;
+    }
+    .images img{
+        margin-right:20px;
+        /* 원래 이미지 사이 틈이 있어 마진 20PX만 잡히지 않음 */
+       float:left;
+    }
+    .images img:last-of-type{
+        margin-right:0;
+        /* menu가 위로 올라오고, images높이가 안잡힘 (0으로나옴)
+        식 요소 모두 플롯이 적용되면, 부모요소의 높이가 잡히지 않는다. */
+    }
+    .images span{
+        display:block;
+    }
+
+    .menu li {float:left; 
+        list-style:none;
+        background: #ccc;
+        margin-right:30px;
+    }
+
+    .menu:after{
+        content:'';
+        clear:both;
+        display:block;
+        /* after before inline이기 때문에 display:block;  
+        */
+    }
+
+    .cf:after{
+        content:'';
+        clear:both;
+        display:block;
+    }
+    /* cf:clearfix. css reset에 공통으로 많이 넣음 */
+    </style>
+</head>
+
+<body>
+    <h1>Float</h1> 
+    <!-- h1 공간다쓰는 블록요소였으나, float적용하면서 위치변경+ 글자크기 만큼 사이즈로 변경 -->
+    <hr>    
+    <span>inline element</span>     
+    <hr>     
+    <img src="http://placehold.it/100x100" alt="">     
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br class="clear"> Saepe vitae reprehenderit exercitationem praesentium tempora placeat quod illo sunt maxime aut necessitatibus sint ea officia ab, quaerat assumenda odio iste fuga?</p>     
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vitae reprehenderit exercitationem praesentium tempora placeat quod illo sunt maxime aut necessitatibus sint ea officia ab, quaerat assumenda odio iste fuga?     
+    </p>
+
+    <hr>
+    <p class="images">
+        <img src="http://placehold.it/100x100" alt="">  
+        <img src="http://placehold.it/100x100" alt="">  
+        <img src="http://placehold.it/100x100" alt="">        
+        <span style="clear:both"></span>
+        <!-- 부모의 높이까지도 달려들음. 여기 뒤부터는 정상적으로 나오게 해줘. 클이어하는 요소는 블록성격이 있어야한다 -->
+    </p>
+    <hr>
+    <ul class="menu cf">
+        <li>
+            <a href="">menu 1</a>
+        </li> 
+        <li>
+            <a href="">menu 2</a>
+        </li> 
+        <li>
+            <a href="">menu 3</a>
+        </li> 
+         <!-- <div style="clear:both;"></div> 
+     웹표준검사오류: ul은 li외에는 자식요소로 가질수x -->
+    </ul>
+    <hr>
+</body>
+
+</html>

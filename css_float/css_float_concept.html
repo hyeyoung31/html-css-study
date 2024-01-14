@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+</head>
+<body>
+<h2>FLOAT의 특징</h2>
+  <pre>
+    FLOAT이 적용된 요소가 해당 방향으로 이동한다. 
+    FLOAT이 적용된 요소의 크기는 (블록 요소여도) content의 크기 만큼 인지된다.
+    FLOAT이 적용된 인라인 요소가 블록요소 처럼 크기 지정이 가능하다.
+    FLOAT이 적용된 요소를 뒤따라 오는 요소들이 감싼다.
+    자식 요소 모두 플롯이 적용되면, 부모요소의 높이가 잡히지 않는다.
+    감싸는 속성을 해지(clear)해야 뒤의 요소들을 다시 배치할 수 있다.
+    감싸는 속성을 해지(clear)해야 자식요소의 높이를 부모요소가 인지한다.
+  </pre>  
+
+<h2>FLOAT 해제방법</h2>
+  <pre>
+    1. 공간에 빈태그를 넣어 스타일을 인라인 스타일로 적어clear. 바람직하지 않음.단 클리어하는 요소는 블록성격이여야 함
+    <span style="clear:both"></span>
+    .images span{  display:block;}
+
+    2. 각 요소에 가상선택자 after를 이용해 clear. 단 before after는 인라인 요소로 블록요소로 변경
+    .menu:after{
+        content:'';
+        clear:both;
+        display:block;
+    }
+
+    3. cf클래스 만들어 플롯 해제가 필요한 곳에 클래스 달기
+    .cf:after{
+        content:'';
+        clear:both;
+        display:block;
+    }
+</pre>
+</body>
+</html>
