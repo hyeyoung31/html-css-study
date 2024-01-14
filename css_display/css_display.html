@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>display</title> 
+<style>
+ 
+    .box {
+        width: 50%;
+        background: #3498db;
+        color: #fff;
+       /* div block요소라 넓이 잘 반영 */
+    }
+
+    span{
+        width:50%;
+        background:green;
+        color:#fff;
+        display:block;
+    }
+    
+    img{width:150px;display:inline;}
+    /* img inline-block의 성향이 있음. 인라인요소 인데 크기가 지정됨 */
+    p {text-align: center;}
+    /* 인라인이기 때문에 분모에 text-align 정렬 할 수 있음 */
+
+    .menu{text-align: center;}
+    .menu li{
+        width:150px;
+        padding:10px;
+        background: #ebebeb;
+        line-height: 60px;
+        /* line-height 인라인일 때 먹히지 않고, block요소일 때 반영 */
+        list-style:none;
+        text-align: center;
+        display:inline-block;
+    }
+    /* menu안에 li 일렬로 가운데 정렬 하기 위해, display:inline. 그러나
+    크기 설정이 안됨. 크기반영되는 block속성도 필요. inline-block */
+    
+    /* display:tbale */
+    .portfolio{
+        background:#ebebeb;
+        padding:0;
+        display:table;
+        width:100%;
+    }
+    .portfolio li{
+        width:33.33%; background: silver; list-style: none;
+        /* ul tag왼쪽에 기본적으로 패딩이있다 */
+        display:inline-block;
+        display: table-cell;
+    }
+    /* 요소를 안보이게 하는 법 */
+    /* h2{display:none;} */
+    h3{visibility: hidden;}
+    /* 원래 있던 공간은 차지함 */
+    h4{opacity: 0;}
+    /* 커서될 때 작때기 표시 뜸 */
+</style> 
+</head>
+<body> 
+
+    
+     <header> 
+        <h1>Display</h1>         
+        <h2>Heading</h2>
+        <h3>Visibility</h3>        
+        <h4>Opacity</h4>         
+    </header> 
+    <div class="box">block level element</div>         
+    <div class="box">block level element</div>        
+    <span>inline level element</span>         
+    <span>inline level element</span>         
+    <hr> 
+    <p>
+        <img src="http://placehold.it/100x100" alt="">         
+        <img src="http://placehold.it/100x100" alt="">         
+    </p>
+    <hr> 
+
+    <ul class="menu">         
+        <li>menu1</li>         
+        <li>menu2</li>        
+        <li>menu3</li>        
+    </ul> 
+
+    <ul class="portfolio">         
+        <li>portfolio item1</li>
+        <li>portfolio item2</li>
+        <li>portfolio item3</li>
+    </ul> 
+</body>
+</html>
