@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Exercise 1</title>
+    <style>
+
+/* 
+    .portfolio_list{
+        width:860px;
+        margin:0 auto;
+        padding:10px;
+        background:green;
+    } */
+
+
+    /* 여백 20px주는 방법 ① */
+    /* .portfolio_list li{
+        float:left;
+        margin-right:20px;
+    }
+    
+    .portfolio_list li:last-child{
+        margin-right:0;
+    } */
+
+    
+    /* 여백 20px주는 방법 ②*/
+    /* .portfolio_list li{float:left;}
+    .portfolio_list li+li{
+        margin-left:20px;
+    } */
+
+        /* 여백 20px주는 방법 ③*/
+    /* .portfolio_list li{float:left; list-style: none;}
+    .portfolio_list li:not(:last-child){
+        margin-right:20px;
+    } */
+
+    /* 분모 ul 높이 padding값 20만 나오는 이유-float해제 안해서 */
+    /* .portfolio_list:after{
+        content:'';
+        display:block;
+        clear:both;
+    } */
+    
+    
+    .portfolio_list,.portfolio_list2{
+        width:860px;
+        margin:20px auto;
+        padding:10px;
+        background:green;
+    }
+   
+    .portfolio_list li,
+    .portfolio_list2 li{float:left; list-style: none;}
+    .portfolio_list2 li{margin-right: 20px;}
+    .portfolio_list li:not(:last-child){
+        margin-right:20px;}
+    
+    .portfolio_list2 li:nth-child(4n)
+    {
+        margin-right:0;
+    }
+
+    .clearfix:after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+    /* float 해제하는 곳에 class로 clearfix만 써주면 됨 */
+
+    header{
+        width:1130px;
+        margin:0 auto;
+        background:#ebebeb;
+    }
+
+    header h1{float:left;
+    line-height:70px;}
+    header nav{float:right;}
+    /* 해더가 자식요소의 높이 인식못함. clearfix */
+    /* nav에 넓이 값 주면 안됨. 메뉴 늘어나 크기 늘어날 때 커버x float적용하면 컨텐츠의 크기가 자동 인식. */
+    header nav ul li{
+        float:left;
+        list-style:none;
+        margin-left:20px;
+        line-height:70px;
+    }
+    /* ul이 자식요소 li크기 인식 못해. clearfix
+     만약 nav가 없고 ul에 float, li에 float걸렸 다면 ul에는 clearfix안해도 됨. 플롯주면 컨텐츠 크기 자동인식하기 때문 */
+    /* h1에 기본 마진이 있음. *margin:0 paddingL0 */
+   
+    * {margin:0;padding:0;}
+</style>
+</head>
+
+<body>
+
+    <h1>Portfolio List</h1>
+
+
+    <ul class="portfolio_list clearfix">
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+    </ul>
+    <ul class="portfolio_list2 clearfix">
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+    </ul>
+
+    <hr>
+    <header class="clearfix">
+        <h1><a href="">Logo</a></h1>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="">Login</a></li>
+                <li><a href="">Member Join</a></li>
+                <li><a href="">Sitemap</a></li>
+                <li><a href="">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        <h2>content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, autem ducimus rem magni minima debitis
+            sequi quas? Provident rem impedit quae. Dolores dolor incidunt accusamus, velit provident quibusdam.
+            Similique, tempore!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, autem ducimus rem magni minima debitis
+            sequi quas? Provident rem impedit quae. Dolores dolor incidunt accusamus, velit provident quibusdam.
+            Similique, tempore!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, autem ducimus rem magni minima debitis
+            sequi quas? Provident rem impedit quae. Dolores dolor incidunt accusamus, velit provident quibusdam.
+            Similique, tempore!</p>
+    </main>
+</body>
+
+</html>
