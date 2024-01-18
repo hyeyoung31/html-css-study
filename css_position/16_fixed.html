@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position fixed</title>
+    <style>
+        .wrapper{ 
+            max-width:900px; 
+            width: 90%; 
+            margin:0 auto; 
+        } 
+
+        .back_to_top{
+            padding:10px 20px;
+            background:#444;
+            color:#fff;
+            font-weight:bold;
+            text-transform:uppercase;
+            text-decoration: none;
+            position: fixed;
+            right: 50px;
+            bottom:50px;
+            margin-right:50px;
+            /* 주의! margin-left:-50px은 먹지 않음. fiexed right을 줘서 오른쪽을 보고 있기 때문 */
+            margin-bottom:50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper"> 
+        <!--
+            fixed의 특징
+            1. 요소의 위치를 다른 요소들이 모르게 된다. 
+            2. 요소의 크기가 내용의 크기로 축소된다. 
+            3. 무조건 브라우저 화면이 기준이 된다. 
+            4. left, right, top, bottom 값으로 위치를 설정한다. 
+        -->
+        <h1>Position fixed</h1>       
+        <section>  
+            <h2>content title</h2>       
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+
+        </section> 
+        <section>  
+            <h2>content title</h2>       
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquam repudiandae ipsam incidunt, numquam alias molestias maxime assumenda deleniti nostrum rerum vel distinctio esse neque dignissimos fugiat qui provident id.
+            </p>
+
+        </section> 
+        <hr>         
+        <a href="" class="back_to_top">Top</a>         
+    </div> 
+</body>
+
+</html>
