@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient</title>
+  <style>
+    div {
+        width:300px;
+        height:300px;
+        border:1px solid #ccc;
+    }
+    .linear {
+     /* background:linear-gradient(방향,색상(위치)..);
+     */
+     /* background:linear-gradient(to right, #000 0%, #fff 100%); */
+     /* background:linear-gradient(to bottom, #000 0%, #fff 100%); */
+     /* background:linear-gradient(to, #000 0%, #fff 100%); */
+     /* background:linear-gradient(45deg, #000 0%, #fff 50%, #000 100%); */
+     /* background:linear-gradient(to top, #2989cc 0%, #fff 50%, #906a00 52%, #d99f00 64%, #fff 100%); */
+     /* background:linear-gradient(#000,#fff, #000); */
+     /* background:linear-gradient(to bottom, #3498db 0%, #3498db 20%, #fff 20%, #fff 60%,
+     #3498db 60%, #3498db 100%); */
+     /* background:linear-gradient( #3498db 20%, #fff 20%, #fff 60%,
+     #3498db 60%); */
+     /* background: repeating-linear-gradient(to right, #3498db 0%, #3498db 10%, #fff 10%,
+     #fff 20% 100px) */
+     background: repeating-linear-gradient(to right, #3498db 0, #3498db 20px, #fff 20px,
+     #fff 40px 150px)
+    }
+     
+    .radial{
+        /* radial-gradient(원형/타원형, 중심점, 색상(위치), 색상(위치)..) */
+        /* background: radial-gradient(circle at center, #000,#fff); */
+        /* background:radial-gradient(ellipse at 50px 50px, #000,#fff); */
+        /* background:radial-gradient(ellipse at right top, #000,#fff); */
+        /* background:repeating-radial-gradient(circle at right bottom, #000,#fff 50px); */
+        background:repeating-radial-gradient(circle at right bottom,  #3498db, #3498db 10px, #fff 10px, #fff 20px  );
+    }
+
+    .conic {
+        background:conic-gradient(#000,#fff, #000, #fff);
+    }
+  </style>
+</head>
+<body>
+    <h1>gradient</h1>
+    <h2>linear gradient</h2>
+    <div class="linear">linear</div>
+    <h2>radial gradient</h2>
+    <div class="radial">radial</div>
+    <h2>conic gradient</h2>
+    <div class="conic">conic</div>
+  
+</body>
+</html>
