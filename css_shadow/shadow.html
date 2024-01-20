@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>shadow</title>
+  <style>
+     .text1{
+      font-size: 72px;
+      text-shadow: 0 10px 0 rgba(0,0,0,.1);
+     }
+
+     .text2{
+      font-size: 72px;
+      text-shadow: 7px 8px 0 rgba(0,0,2,.1);
+     }
+
+     .text3{
+      font-size: 72px;
+      text-shadow: 0 0 7px rgba(0,0,0,.8);
+     }
+
+     
+     .text4{
+      font-size: 72px;
+      text-shadow: -10px -10px 1px rgba(0,0,0,.1);
+     }
+
+     .text5{
+      font-size: 72px;
+      text-shadow: 0 0 0 rgba(0,0,0,0);
+      transition:0.3s ease-in;
+     }
+
+     .text5:hover{
+      font-size: 72px;
+      text-shadow: 
+      0 0 10px rgba(0,0,255,.6),
+      0 0 20px rgba(0,255,0,.6);
+     }
+
+     .box1{
+      width:300px;
+      height:80px;
+      border:1px solid #ebebeb;
+      margin: 50px;
+      border-radius:10px;
+      box-shadow: 10px 10px 5px  rgba(0,0,0,.2);
+      border:10px solid #ebebeb;
+    }
+    /* 포토샵의 stroke 안쪽도 둥근 사각형을 만들 때
+        box-shadow에 포토샵의 drop-shadow spread와 비슷한 속성을 통해 
+        구현할 수 있다. */
+    .box2{
+      width:300px;
+      height:80px;
+      border:1px solid #ebebeb;
+      margin: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 0 10px rgba(0,0,0,.2);
+    }
+
+    .box3{
+      width:300px;
+      height:80px;
+      border:1px solid #ebebeb;
+      margin: 50px;
+      box-shadow:Inset 10px 10px 0 rgba(0,0,0,.2);
+    }
+
+    
+    .box4{
+      width:300px;
+      height:80px;
+      border:1px solid #ebebeb;
+      margin: 50px;
+      box-shadow:Inset 0 0 10px rgba(0,0,0,.2);
+    }
+
+    img{
+      transition:0.4s;
+      margin:30px;
+    }
+
+    img:hover{
+       box-shadow: 
+       10px 10px 5px rgba(0, 0, 0, 0.2),
+       10px 10px 10px rgba(30, 0, 255, 0.6);
+    }
+
+    section{
+      height:1000px;
+    }
+
+    input{
+      line-height: 60px;
+      padding: 0 10px;
+      outline:none;
+      border:none;
+      border:1px solid #ccc;
+    }
+    input:focus{
+      box-shadow: inset 0 0 5px rgba(0,0,255,0.5);
+    }
+  </style>
+
+</head>
+<body>
+    <h1>shadow</h1>
+    <h2>text shadow</h2>
+    <h3 class="text1">text shadow</h3>
+    <h3 class="text2">text shadow</h3>
+    <h3 class="text3">text shadow</h3>
+    <h3 class="text4">text shadow</h3>
+    <h3 class="text5">text shadow</h3>
+
+    <h2>box shadow</h2>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <hr>
+    <img src="https://source.unsplash.com/category/nature/400x200">
+    <hr>
+    <input type="text" placeholder="Enter Your Name">
+    <section>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum tempora expedita nisi tempore, fuga libero hic, facere maiores amet autem aliquid exercitationem, nobis totam atque in minima eligendi quis voluptatum.</p>
+    </section>
+  
+</body>
+</html>
