@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>transform part 2</title>
+	<style>
+		figure {margin:100px 0;}
+		/* scaleZ */
+		figure.scaleZ img{
+			transition:0.5s;
+		}
+       figure.scaleZ:hover img{
+		/* transform:scale(0); */
+		/* transform:scale(1.5); */
+		/* transform:scaleX(1.2); */
+		/* transform:scaleY(1.2); */
+		/* transform:scale(1.2,1.5); */
+		transform: perspective(1000px) scaleZ(2) translateZ(100px)  ;
+		/* 기본 거리 설정.앞으로 100px온 거리를 2배 늘림 !scaleZ를 앞에 적어줘야함*/
+	   }
+
+	   /* rotate */
+
+	   figure.rotate img{
+		transition:0.5s;
+	   }
+	   figure.rotate:hover img{
+		/* transform:rotate(-45deg); */
+		/* transform:perspective(1000px) rotateX(45deg); */
+		/* 뒤로 넘어가는 것처럼 보이지않는 이유: 원근감이 있어야한다 */
+		/* transform:perspective(1000px) rotateX(-90deg); */
+		transform:perspective(800px) rotateY(180deg);
+	}
+
+	  /* skew */
+
+	  figure.skew img{
+		transition:0.5s;
+	   }
+	   figure.skew:hover img{
+		/* transform:skewY(20deg); */
+	    transform:skew(45deg,10deg);
+	}
+
+		  /* origin */
+
+	  figure.origin img{
+		transition:0.5s;
+		transform-origin:0 0;
+		/* 왼쪽 상단 꼭지점 기준*/
+		/* transform-origin:right center; */
+		/* 오른쪽 센터 기준 */
+	   }
+	   figure.origin:hover img{
+		transform:scale(1.5);
+		/* transform-origin:50% 50%; */
+		/* 50 50 기본 설정. center에서 커짐 
+		  왼쪽 상단 꼭지점을 기준으로 커진다: 0 0 쓰면 되는데
+		  figure.origin img에는 transform-origin:50% 50%가 기본으로 설정되어있어
+		  50% 50% 에서 0 0 으로 이동하는 것도 transition이 걸린다
+		  따라서 figure.origin img 에 transform-origin:0 0; 을 적어줘야 한다*/
+	}
+
+	figure.orotate img{
+		transition:0.5s;
+		transform-origin:0 100%;
+	}
+
+	figure.orotate:hover img{
+		transform:rotate(45deg);
+		/* transform:perspective(300px) rotateX(45deg); */
+	  
+	}
+
+	
+	figure.orotate2 img{
+		transition:1s;
+		transform-origin:0 50%;
+		transform:perspective(300px) rotateY(90deg)
+	}
+
+	figure.orotate2:hover img{
+	transform:perspective(300px) rotateY(0); 
+	  
+	}
+	</style>
+</head>
+<body>
+<pre>
+    matrix(n,n,n,n,n,n);
+    scaleX, skewY, skewX, scaleY, translateX, translateY
+</pre>
+<figure class="scaleZ">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+<figure class="rotate">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+<figure class="skew">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+<figure class="origin">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+<figure class="orotate">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+<figure class="orotate2">
+	<img src="https://source.unsplash.com/category/nature/400x200">
+	<figcaption>
+		photo description
+	</figcaption>
+</figure>
+
+
+</body>
+</html>
