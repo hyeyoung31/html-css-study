@@ -1,201 +1,208 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>transform part 1</title>
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    figure{
+        margin:5rem 0;
+    }
 
-    figure {margin: 200px 0;}
-   /* x,y축이동 */
-	figure.xy img{
-		transform:translateY(0px);
-		transition:0.5s; 
+    figure:last-of-type {
+        margin-bottom:10rem;
+    }
+    /* 1.x축 이동.
+     - transform 은 주변 요소에 영향을 주지 않는 가상의 이동
+     - 이전의 값이 없어도 작동해 원본 상태를 적을 필요없음. */
+    .x img{
+        /* transform:translateY(0px); */
+        transition:0.5s;
+        /* margin-top:0; */
+    }
 
-	 }
-	 figure.xy:hover img{
-		/* transform:translateX(100px) translateY(100px) */
-		/* margin-top:100px; */
-		transform:translate(100px,100px);
-	 }
+    .x img:hover{
+        transform: translateY(100px);
+        /* margin-top:100px; */
+    }
+
+    /* 2.x,y축 함께 이동
+    -콤마쓰면 안됨
+     */
+     .xy img{
+        transition:0.5s;
+     }
+
+     .xy img:hover{
+        /* transform: translateX(100px) translateY(100px); */
+        transform: translate(100px, 100px);
+     }
+
+    /* 3.z 축 이동 
+    -perspective로 부모던 움직이는 요소이던 기본 거리를 설정해야함
+    -perspective-origin: 케마라가 보는 각도
+    -효과 동적으로 분명하게 보이려면 perspective 거리를 가깝게(크게 보임)
+    */
+    
+    figure.z {
+        perspective:1000px;
+        perspective-origin: 0 50%;
+    }
+    .z img{
+        transition:0.5s;
+     }
+    .z img:hover{
+        transform:translateZ(100px);
+    }
+
+    /* 4. x,y,z축 이동
+     -깔끔하게 움직이기 위해 이미지가 아닌, figure에 hover
+    */
+
+    figure.xyz {
+        perspective:1000px;
+        perspective-origin: 50% 50%;
+    }
+    figure.xyz img{
+        transition:0.5s;
+     }
+   figure.xyz:hover img {
+        transform:translate3d(100px, 100px, 200px);
+    }
+
+    /*5. x,y,z축 이동- 카메라가 이미지의 중앙을 보고 커지도록 
+    -figure 아닌 image에 perspective를 준다
+    -유의사항: hover 후의 transform 값이 hover 이전 설정된 원근감을 없앰으로 , hover 후 같이 써줘야 함*/
+   
+    figure.center img {
+        transform:perspective(1000px);
+        transition: 0.5s;
+    }
+
+    figure.center:hover img{
+        transform: perspective(1000px) translateZ(200px);
+    }
+
+    /*6 x,y,z축 이동- 5번 상태에서 perspective-origin을 주는 법
+     -기존대로 perspective-origin쓰면 안먹음 
+     -transform:origin사용. 기본 값이 50% 50% 임으로 0 50% 앞에 써주기
+     */
+   
+     .transform_origin img {
+        transform:perspective(1000px);
+        transition: 0.5s;
+        /* perspective-origin: 0 50%; */
+        transform-origin: 0 50%;
+    }
+
+    figure.transform_origin:hover img{
+        transform: perspective(1000px) translateZ(200px);
+    }
+    
+    /*7 이미지에 caption끼우기
+     -figure의 크기를 이미지 크기 만큼 준다
+    */
+    figure.caption {
+    position:relative;
+    width:400px;
+    height:200px; 
+    overflow:hidden;
+    }
+
+    figure.caption figcaption {
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,.7);
+        transform:translateX(100%);
+        color:#fff;
+        transition: 0.5s;
+    }
+
+    figure:hover figcaption{
+        transform:translate(0);
+    }
+
+    /* 8.분모 안에 자식요소 가운데에 놓는 법*/
+   .parent{
+    height:500px;
+    border:1px solid #ccc;
+    position:relative;
+   }
+
+   .child{
+    width:300px;
+    height:200px;
+    background:green;
+    position:absolute;
+    /* left:calc(50% - 150px);
+    top:calc(50% - 100px); */
+    /* margin-left:-150px;
+    margin-top:-100px; */
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    /* 요소 크기의 반만큼 왼쪽으로,위로 올라가 */
+   }
+</style>
+<body>
+    <figure class="x">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+
+    <figure class="xy">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+
+    <figure class="z">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+
+    <figure class="xyz">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
     
 
+    <figure class="center">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
+    
+        
+    <figure class="transform_origin">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+            photo description
+        </figcaption>
+    </figure>
 
-     /* z축 perspective 1000일 때 */
-	figure.z{
-		perspective:1000px;
-		/* 기본거리 */
-        perspective-origin:0 50%;
-	}
+            
+    <figure class="caption">
+        <img src="https://source.unsplash.com/category/nature/400x200">
+        <figcaption>
+           caption
+        </figcaption>
+    </figure>
 
-	figure.z img{
-		transition:0.5s; 
-
-	 }
-	 figure.z img:hover{
-		/* transform:translateZ(100px); */
-		/* 100px만큼 카메라에 가까워진다 */
-		transform:translateZ(-200px);
-	 }
-
-
-
-
-	    /* z축 perspective 500일 때 */
-	figure.perspective{
-		perspective:500px;
-		/* 기본거리 */
-        perspective-origin:0 50%;
-	}
-
-	figure.perspective img{
-		transition:0.5s; 
-
-	 }
-	 figure.perspective img:hover{
-		/* transform:translateZ(100px); */
-		/* 100px만큼 카메라에 가까워진다 */
-		transform:translateZ(-200px);
-	 }
-
-
-      /* xyz축 
-	  이미지가 흔들리는 현상 막기 위해 
-	  이미지가 아닌 figure.xyz에 호버*/
-
-	figure.xyz{
-		perspective:1000px;
-	    perspective-origin:0 50%;}
-
-	figure.xyz img{
-		transition:0.5s; 
-
-	 }
-	 /* figure.xyz img:hover{
-		transform:translate3d(100px,100px,200px);
-	 }
-	 */
-
-	 figure.xyz:hover img{
-		transform:translate3d(100px,100px,200px);
-	 }
-
-	 
-      /* 이미지 어느각도에서든 가운데에서 커지도록*/
-
-	figure.center img{
-		transform:perspective(1000px);
-		transition:0.5s; 
-		/* transform-origin:0 50%; */
-
-	 }
-
-	 figure.center img:hover{
-		transform:perspective(1000px) translateZ(200px);
-	/* translateZ(200px)만쓰면 transform:perspective(1000px) 값을 리셋함으로
-	같이 써줘야함 */
-	}
-	
-		 
-      /* 이미지 캡션*/
-
-	figure.caption{
-	 position:relative;
-	 width:400px;
-	 height:200px;
-	 overflow:hidden;
-	}
-
-	figure.caption img{
-		transition:0.5s; 
-		transform-origin:0 50%;
-
-	 }
-
-	 .caption figcaption{
-       position:absolute;
-	   left:0;
-	   right:0;
-	   top:0;
-	   bottom:0;
-	   background:rgba(0,0,0,.7);
-	   color:#fff;
-	   transform:translateX(100%);
-	   transition:0.5s;
-	 }
-
-	 .caption:hover figcaption {
-		transform:translateX(0);
-	 }
-
-
-	.parent{
-		height:500px;
-		border:1px solid #ccc;
-		position:relative;
-	}
-
-	.child{
-		width:300px;
-		height:200px;
-		background:green;
-		color:#fff;
-		position:absolute;
-		/* left:calc(50% - 150px);
-		top:calc(50% - 100px); */
-		/* margin-left:-150px;
-		margin-top:-100px; */
-		transform:translate(-50%,-50%);
-	}
-	</style>
-</head>
-<body>
-
-
-<figure class="xy">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		photo description
-	</figcaption>
-</figure>
-
-<figure class="z">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		z축 perspective 1000
-	</figcaption>
-</figure>
-
-<figure class="perspective">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		z축 perspective 500
-	</figcaption>
-</figure>
-
-
-<figure class="xyz">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		xyz함께 이동
-	</figcaption>
-</figure>
-
-<figure class="center">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		어느 각도에서 보던 이미지가 가운데서 커지도록
-	</figcaption>
-</figure>
-
-<figure class="caption">
-	<img src="https://source.unsplash.com/category/nature/400x200">
-	<figcaption>
-		이미지 캡션
-	</figcaption>
-</figure>
-
-<div class="parent">
-    <div class="child">center</div>
-</div>
+    <div class="parent">
+        <div class="child">center</div>
+    </div>
 </body>
 </html>
