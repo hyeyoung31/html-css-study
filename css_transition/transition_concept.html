@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>transition</title>
+  <style>
+
+    div {margin:5rem 0;}
+
+    /* 1.기본 문법 */
+  
+    .box {
+      width: 100px;
+      height: 100px;
+      background: silver;
+      transition-property:width,height; 
+      transition-duration: 1s, 0.5s;
+
+      transition-delay : 1s,0.5s;
+    }
+
+    .box:hover {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* 2.색상 바꾸기 */
+
+    .color{
+      width:100px;
+      height:100px;
+      background:silver;
+
+      transition-property: background;
+      transition-duration:1s;
+    }
+ 
+    .color:hover{
+      background:green;
+    }
+
+    /* 3.transition 방향
+      1)hover 전에 쓰면 1->2->1
+      2)hover 에만 쓰면 1->2
+      3)hover 전 후 다 쓰면 
+       hover: 순방향
+      이전: 역방향 (되돌아오는) */
+
+      .sequence{
+        width:100px;
+        height:100px;
+        background:salmon;
+        transition-property: all;
+        transition-duration: 2s;
+        transition-delay: 0;
+      }
+
+      .sequence:hover{
+        width:200px;
+        height:200px;
+        transition-property:all;
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+      }
+
+      /* 4-1.transition-timing-functioLlinear:ease*/
+
+    figure.ease img {
+      width:200px;
+      height:200px;
+      transition-property:width;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+    }
+
+    figure.ease:hover img{
+      width:400px;
+    }
+
+
+    
+      /* 4-2.transition-timing-functioLlinear:ease-in*/
+
+
+    figure.ease-in img {
+      width:200px;
+      height:200px;
+      transition-property:width;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in;
+    }
+
+    figure.ease-in:hover img{
+      width:400px;
+    }
+
+       
+      /* 4-3.transition-timing-functioLlinear:ease-out*/
+
+
+      figure.ease-out img {
+      width:200px;
+      height:200px;
+      transition-property:width;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-out;
+    }
+
+    figure.ease-out:hover img{
+      width:400px;
+    }
+
+          
+      /* 4-3.transition-timing-functioLlinear:ease-in-out*/
+
+
+      figure.ease-in-out img {
+      width:200px;
+      height:200px;
+      transition-property:width;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+    }
+
+    figure.ease-in-out:hover img{
+      width:400px;
+    }
+</style>
+</head>
+
+<body>
+
+  <div class="box">
+
+  </div>
+
+  
+  <div class="color">
+
+  </div>
+
+  <div class="sequence">
+
+  </div>
+
+  <figure class="ease">
+    <img src="http://placehold.it/200x200" alt="">
+    <figcaption>ease</figcaption>
+  </figure>
+
+  <figure class="ease-in">
+    <img src="http://placehold.it/200x200" alt="">
+    <figcaption>ease-in</figcaption>
+  </figure>
+
+  <figure class="ease-out">
+    <img src="http://placehold.it/200x200" alt="">
+    <figcaption>ease-out</figcaption>
+  </figure>
+
+  <figure class="ease-in-out">
+    <img src="http://placehold.it/200x200" alt="">
+    <figcaption>ease-in-out</figcaption>
+  </figure>
+</body>
+
+</html>
