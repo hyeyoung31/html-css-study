@@ -6,17 +6,24 @@
   <title>Transition활용</title>
 
   <style>
-  p{margin:0;}
+   p{margin:0;}
    figure{
     margin:0;
     position:relative;
    }
-   
+
+   /* 이미지는 항상 밑에 공백이 생긴다 
+    vertical-align: top이용해 없앰*/
+    
+   img {
+    vertical-align: top;
+     
    li{
     list-style: none;
     width:400px;
     height:200px;
    }
+
 
   /* 이미지 사이즈와 딱맞게 image-caption씌우기 */
    /* li figcaption{
