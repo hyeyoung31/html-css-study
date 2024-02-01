@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+    div {
+      margin:5rem 0;
+    }
+    /* 1. 사이트 로드시 실행되는 애니메이션 */
+    .box {
+        width:100px;
+        height:100px;
+        background:silver;
+        animation-name: changecolor1;
+        animation-duration: 5s;
+        animation-delay: 0.5s;
+    }
+/*     
+    @keyframes changecolor1 {
+     from {
+        background:silver;
+     }
+     to {
+        background:blue;
+     }
+    } */
+
+       
+    @keyframes changecolor1 {
+     0% {
+        background:silver;
+     }
+     50%{
+        background:yellow;
+     }
+     100% {
+        background:blue;
+     }
+    }
+    /* 2. transition처럼 이벤트 발생시 애니메이션 */
+
+    .hover {
+        width:100px;
+        height:100px;
+        background:silver;
+    }
+    .hover:hover  {
+        animation-name: changecolor1;
+        animation-duration: 5s;
+        animation-delay: 0.5s;
+    }
+       
+    @keyframes changecolor1 {
+     0% {
+        background:silver;
+     }
+     50%{
+        background:yellow;
+     }
+     100% {
+        background:blue;
+     }
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+    </div>
+
+    
+    <div class="hover">
+
+    </div>
+
+    <hr>
+    <header>
+        <h1>Main Title</h1>
+        <h2>Sub Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <a href="">Read More</a>
+    </header>
+    <hr>
+</body>
+
+</html
+
+
+
+
+
+>
