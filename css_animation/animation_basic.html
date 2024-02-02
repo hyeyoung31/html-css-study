@@ -8,6 +8,7 @@
     div {
       margin:5rem 0;
     }
+        
     /* 1. 사이트 로드시 실행되는 애니메이션 */
     .box {
         width:100px;
@@ -16,9 +17,49 @@
         animation-name: changecolor1;
         animation-duration: 5s;
         animation-delay: 0.5s;
+        animation-iteration-count: 2;
+        animation-timing-function: ease-in;
+        /* 처음 느리고 끝이 빠른 속도모델 */
+      
+        /* animation-direction:normal; */
+         /*0% ->50% ->100% ->처음 */
+        /* animation-direction:reverse;   */
+        /*100% -> 50%->0% (처음)*/
+        /* animation-direction:alternate;   */
+        /* 0% -> 50% -> 100% -> 50% ->0% */
+        /* animation-direction: alternate-reverse; */
+        /* count2개 이상 */
+        /* 100% -> 50% -> 0% ->50% -> 100% ->처음 */
+
+        /* animation-fill-mode: forwards; */
     }
-/*     
-    @keyframes changecolor1 {
+        
+   /* 2. 애니메이션 한 줄로 적는 법 */
+
+    .box2 {
+        width:100px;
+        height:100px;
+        background:silver;
+        animation:changecolor1 3s 0.5s 2 ease-in normal forwards;
+    }
+
+
+    /* 3. transition처럼 이벤트 발생시 애니메이션 */
+
+    .hover {
+        width:100px;
+        height:100px;
+        background:silver;
+    }
+    .hover:hover  {
+        animation-name: changecolor1;
+        animation-duration: 5s;
+        animation-delay: 0.5s;
+    }
+       
+  /* keyframes animation */
+   
+    /*@keyframes changecolor1 {
      from {
         background:silver;
      }
@@ -39,31 +80,44 @@
         background:blue;
      }
     }
-    /* 2. transition처럼 이벤트 발생시 애니메이션 */
 
-    .hover {
-        width:100px;
-        height:100px;
-        background:silver;
+   /* 4. 글자 차례차례 올라오는 animation 효과 */
+    header * {
+      opacity:0;
+      animation:fadeIn 1.5s forwards; 
+      position:relative;
+      top:80px;
     }
-    .hover:hover  {
-        animation-name: changecolor1;
-        animation-duration: 5s;
-        animation-delay: 0.5s;
+   
+    header h2 {
+      animation-delay:0.1s;
     }
-       
-    @keyframes changecolor1 {
-     0% {
-        background:silver;
-     }
-     50%{
-        background:yellow;
-     }
-     100% {
-        background:blue;
-     }
+    header p {
+      animation-delay:0.3s;
     }
+    header a {
+      animation-delay:0.5s;
+    }
+
+    @keyframes fadeIn {
+     from {
+      opacity:0;
+      top:80px;
+     }
+
+     to{
+      opacity:1;
+      top: 0;
+     }
+   }
+
+   /* header 움직일 때 주변 요소에 옇향을 주지 않고 이동하는법
+   1)position 이용해 relative를 주고 top값 이용
+   2)transform 의방법
+   margin주면서 움직이면 안됨
+    */
     </style>
+    
 </head>
 
 <body>
@@ -72,7 +126,10 @@
 
     </div>
 
-    
+    <div class="box2">
+
+    </div>
+
     <div class="hover">
 
     </div>
@@ -87,7 +144,7 @@
     <hr>
 </body>
 
-</html
+</html>
 
 
 
