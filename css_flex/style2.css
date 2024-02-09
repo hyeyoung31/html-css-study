@@ -1,0 +1,49 @@
+.wrap{
+	width: 500px;
+	margin:20px auto;
+	display:flex;
+	border:1px solid #3498db;
+    /* justify-content: space-between; */
+	height:500px;
+	/* 부모요소 늘리니 자식요소 늘어남. align-items의 기본값이 stretch이기 때문 */
+    align-items: center;
+} 
+
+.wrap div{
+	background: #3498db;
+	color:#fff;
+	padding: 20px;
+}
+
+.wrap div:last-child{
+	/* align-self:flex-start; */
+   align-self:stretch;
+}
+
+
+
+
+.wrap2{
+	width: 500px;
+	margin:20px auto;
+	display:flex;
+	border:1px solid #3498db;
+	flex-direction: column;
+	justify-content: flex-end;
+	height:500px;
+    align-items: flex-start;
+} 
+
+.wrap2 div{
+	background: #3498db;
+	color:#fff;
+	padding: 20px;
+}
+
+.wrap2 div:last-child{
+	/* align-self:flex-start; */
+   align-self:stretch;
+}
+
+
+

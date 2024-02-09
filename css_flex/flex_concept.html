@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>기본속성</h2>
+    <p>
+    display:flex; 자식 요소를 블록 수준(자식 요소 인라인 요소였어도 display:flex 해서 크기가 잡히게 됨) 의 플렉서블 박스로 작동하게 한다.
+    display:inline-flex; 자식 요소를 인라인 수준의 플렉서블 박스로 작동하게 한다 (부모 요소가 inline 요소로 변경)
+    </p>
+
+
+    <h2>flex-direction</h2>
+    <p>
+    row : 기본값, 박스를 왼쪽에서 오른쪽으로 배치.
+          주축은 가로,교차축은 세로가 됨
+    row-reverse: 박스를 가로로 배치하되 역방향으로 배치.
+                 오른쪽에서 왼쪽으로 배치
+    column : 박스를 위에서 아래로 배치. 주축은 세로 교차축은 가로가 됨.
+    column-reverse: 박스를 세로로 배치하되 역방향으로 배치함. 
+                    아래에서 위로 배치, 주축은 세로 ,교차축은 가로가 됨.
+    </p>
+
+
+    <h2>flex-wrap:</h2>
+   <p>자식요소인 flewx 아이템을 아래로 내려서 배치할지를 설정한다.
+   nowrap : 박스를 한줄로 배치
+            기본값으로 요소를 아래줄로 넘기지 않는다.
+   wrap : 박스를 여러 줄로 배치
+          넘치면 아래줄로 넘긴다.
+   wrap-reverse : 박스를 여러줄로 배치하되 역방향으로 배치
+                  주축이 가로일 때는 아래에서 위쪽으로 배치
+                  주축이 세로일 때는 오른쪽에서 왼쪽으로 배치
+    </p>
+
+
+   <h2>justify-content</h2>
+   <p>주축에서 내용을 어떻게 배치할 것인가         
+   flex-start: 시작점에 맞춤
+   flex-end : 끝점에 맞춤
+   space-between: 양끝에 붙이고 사이 간격은 자동
+   space-around: 좌우 간격 요소마다 동일하게
+   space-evenly: 사이 여백 동일하게 (브라우저 i에서는 작동하지 않음)
+  </p>
+
+
+
+  <h2>align-items</h2>
+  <p>
+  교차축에서 내용을 어떻게 배치할 것인가
+   flex-start: 교차축의 위에서부터
+   flex-end: 교차축의 아래에서부터
+   center: 교차축의 가운데
+
+   * 완전 가운데: justify-content: center, align-items:center;
+  </p>
+
+
+  <h2>align-self</h2> 
+  <p>
+   한 요소만 콕찝어서 위치 지정
+   flex-start ...
+   stretch
+  </p>
+
+
+
+  <h2>lign-content</h2>
+  <p>
+  교차축 방향에서 플렉스 아이템을 다양하게 배치
+  flex-start: 교차축이 시작점부터 배치
+  flex-end : 교차축이 끝점부터 배치
+  center : 교차축에서 가운데에 배치
+  space-between 
+  space-around
+  stretch
+</p>
+
+
+
+   <h2>order</h2>
+   <p>
+  기본배치: 요소들의 순서를 HTML 수정 없이 자유롭게 변경
+  문법 : 
+  ·정수값으로는 양수, 음수 모두 사용할 수 있음
+  ·같은 값을 지정하려면 HTML 태그 순서에 따라 배치됨
+  ·값이 작을 수록 앞으로 배치됨
+</p> 
+
+
+
+ <h2>flew-grow, flew-shrink, flex-basis</h2>
+ <p>
+  정의
+  ·플렉스 아이템이 플렉서블 박스보다 작거나 클 경우, 여백이 생기거나 넘칠 수 있다.
+  ·flex-grow, flex-shrink, flex-basis 속성을 사용하여 요소의 크기를 늘리거나, 줄이거나, 또는 가변적인 박스로 설정 가능하다.
+  문법
+  [flew-grow] [flex-shrink] [flex-basis]
+  ·0 1 auto (기본값)
+  ·0 auto (0 1 auto와 같음)
+  ·initial (0 1 auto와 같음)
+  ·auto (1 1 auto와 같음)
+  ·none (0 0 auto와 같음)
+  </p>
+
+
+  <h3>1.flex-grow</h3>
+  <p>
+   플렉서블 박스에 여백이 있을 때 플렉스 아이템의 크기를 늘려서 채운다.
+   속성값을 비율로 설정
+  ·flex-grow : 0.5; 모자른 부분을 늘려서 채우는 값을 50%;
+  ·flex-grow : 1; 모자른 부분을 늘려서 채우는 값을 100%;
+  </p>
+
+  
+  <h3>2.flex-shrink</h3>
+  <p>
+   플렉서블 박스 안의 플렉스 아이템의 크기가 넘칠 경우 축소하여 배치
+   ex) 400px 너비 부모 안에 500px 너비 자식요소에 flex-shrink 적용할 때
+
+  ·flex-shrink : 0.2; 넘치는 부분 100px의 20%, 즉 20px을 줄인 것과 같음.
+  ·flex-shrink : 1 ; 넘치는 부분 100px의 100%, 즉 100px 줄인 것과 같음.
+  </p>
+
+  <h3>3.flex-basis</h3>
+  <p>
+   플렉스 아이템의 초기 크기를 지정
+
+   ·flex-basis:0; 기본값으로 컨테이너의 너비 만큼 인식. 1, auto와 같은 값
+   ·flex-basis:200px: 요소의 너비를 200px로 지정
+   ·flex-basis:50%; 부모가 만들어 준 공간에서 50%;
+  </p>
+</body>
+</html>
