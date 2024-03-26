@@ -17,6 +17,19 @@
 	#content{margin-left: 220px; background-color: lime;}
 	#footer{margin-top: 30px; background-color: silver; line-height: 30px;}
 
+	
+	/* 밑으로 내려오게 하기 위해 플롯 해제, quick 이 달려들려고 해서 clear:both; */
+	 @media (max-width:960px){
+		#wrap {width:100%;}
+        #quick {float:none; width:100%; clear:both;}
+		/* 600/960 */
+		#content {float:right; width:63%;}
+		/* 200 /960 */
+		#aside {width:21%;}
+	   .nav li {float:left; width:25%;}
+	   .nav:after{content:''; display:block; clear: both;}
+	 } 
+
 </style>
 </head>
 
