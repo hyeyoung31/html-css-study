@@ -1,0 +1,21 @@
+
+.container{
+    margin-top:25px;
+}
+
+.container .accordion{
+    max-width: 650px;
+    margin:auto;
+    box-shadow: 0px 7px 29px 0px rgba(100,100, 111, 0.2);
+}
+
+.container .accordion .accordion-item{
+    border-color: #efa31d;
+}
+
+#accordionExample .accordion-item .accordion-header .accordion-button{
+    background:#1D5879;
+    color:#fff;
+    box-shadow:none;
+}
+
