@@ -1,6 +1,7 @@
 html,body{
     height:100%;
     line-height:1;
+    font-size:15px;
 }
 
 .front {
@@ -68,8 +69,36 @@ h1{
 
 .hidden {
     position:fixed;
-    left:0;
     left:-99999em;
     overflow:hidden;
     visibility: hidden;
+}
+
+fieldset{border:none;}
+
+.login_form label{
+    display:block;
+    color: #C2C4CA;
+}
+
+.login_for fieldset{
+    width:100%;
+}
+
+.login_form fieldset input{
+    border:none;
+    border-bottom:1px solid #979797;
+    height:45px;
+    line-height:45px;
+    color:#4A4A4A;
+    width:100%;
+    display:block;
+}
+
+.login_form fieldset input:first-of-type{
+    margin-bottom:62px;
+}
+
+.login_form fieldset input::placeholder{
+    color:#C2C4CA;
 }
