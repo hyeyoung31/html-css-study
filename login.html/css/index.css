@@ -1,9 +1,11 @@
-html,body{
+html, body{
     height:100%;
-    line-height:1;
-    font-size:15px;
 }
 
+body {
+    line-height: 1;
+    font-size:15px;
+}
 .front {
     display:flex;
     flex-direction: column;
@@ -11,35 +13,30 @@ html,body{
     height:100%;
 }
 
+
 .front .sub_content{
     flex:1;
 }
 
 
 header{
-     height:94px;
-     display:flex;
-     justify-content: flex-start;
-     padding: 0 22px;
-     align-items:  center;
+    height:94px;
+    display:flex;
+    /* 앞부터 채워 */
+    justify-content: flex-start;
+    padding: 0 22px;
+    align-items:  center;
 }
 
-.sprite{
-    background: url(../image/sprite.png) no-repeat;
-    background-size: 376px 600px;
-    display:inline-block;
-    text-indent: 101%;
+
+
+.hidden {
+    position:fixed;
+    left:-99999em;
     overflow:hidden;
-    white-space: nowrap;
+    visibility: hidden;
 }
 
-.arrow_left{
-    width: 18px ;
-    height: 18px;
-    background-position: -236px -150px;
-}
-
-.touchevents .arrow_left { background-image: url(../image/sprite_2x.png) no-repeat;}
 
 h1{
     text-align: left;
@@ -55,6 +52,7 @@ h1{
     flex-direction: column;
 }
 
+
 .login_form {
     flex:1;
     display:flex;
@@ -63,37 +61,41 @@ h1{
     margin-top:73px;
 }
 
+
 .login_form a{
     width:100%;
+    text-align: center;
 }
 
-.hidden {
-    position:fixed;
-    left:-99999em;
-    overflow:hidden;
-    visibility: hidden;
-}
 
 fieldset{border:none;}
+
+.login_form .btn{
+  width:100%;
+  border:none;
+}
 
 .login_form label{
     display:block;
     color: #C2C4CA;
 }
 
-.login_for fieldset{
+ .login_form fieldset{
     width:100%;
 }
+
 
 .login_form fieldset input{
     border:none;
     border-bottom:1px solid #979797;
     height:45px;
     line-height:45px;
-    color:#4A4A4A;
+     color:#4A4A4A;
     width:100%;
-    display:block;
+    display:block; 
 }
+
+
 
 .login_form fieldset input:first-of-type{
     margin-bottom:62px;
@@ -101,4 +103,24 @@ fieldset{border:none;}
 
 .login_form fieldset input::placeholder{
     color:#C2C4CA;
+}  
+
+.signup_form fieldset input:not(:last-of-type){
+    margin-bottom:30px;
 }
+
+header.signup {
+    background:url(../image/membership.png) no-repeat left top/cover;
+    height:286px;
+    align-items: flex-start;
+    padding-top:36px;
+    box-sizing: border-box;
+}
+
+header.signup h1{
+    width:100%;
+    text-align: center;
+    font-size:20px;
+    margin: 0;
+}
+
