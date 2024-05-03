@@ -1,0 +1,26 @@
+
+
+.sprite{
+   background: url(../image/sprite.png) no-repeat;
+   background-size: 376px 600px;
+   display:inline-block;
+   text-indent: 101%;
+   overflow:hidden;
+   white-space: nowrap;
+}
+
+.touchevents .sprite { background-image: url(../image/sprite_2x.png);}
+
+
+.arrow_left{
+    width: 18px;
+    height: 18px;
+    background-position: -236px -150px;
+ }
+
+ 
+.sprite.close {
+    width: 18px;
+    height: 18px;
+    background-position: -118px -390px;
+}
