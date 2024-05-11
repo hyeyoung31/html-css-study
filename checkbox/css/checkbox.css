@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+body {margin:50px;}
+input[type=checkbox].css-checkbox {
+    border: none; background: none; 
+    position: absolute; left: -9999px;
+}
+
+input[type=checkbox].css-checkbox + label {
+    display: inline-block;   padding: 0 0 0 30px; height:20px; 
+    line-height:20px;          
+    background: url(../img/bg_checkbox.png) no-repeat 0 0;
+    background-size: 20px 40px;
+    vertical-align: middle;
+}
+input[type=checkbox].css-checkbox:checked + label {
+    background-position:0 -20px;
+}
